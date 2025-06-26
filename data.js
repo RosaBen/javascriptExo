@@ -44,3 +44,26 @@ export const acidesAmines = [
     tyrosine: ["UAU", "UAC"]
   }
 ];
+export const messages = [
+  {
+    message: "Ouais Ouais...",
+    regex: /\?/
+  },
+  {
+    message: "Pwa, calme-toi...",
+    regex: /^[A-Z\s\W\d]+$/g
+  },
+  {
+    message: "on s' fait une partie soum-soum ?",
+    regex: /fortnite/i
+  },
+  {
+    message: "t'es en PLS ?",
+    regex: /^$/
+  }
+  // ,
+  // {
+  //   message: "balek.",
+  //   regex: /[[:word:]]+/g
+  // }
+]

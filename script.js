@@ -1,4 +1,4 @@
-import { entrepreneurs, books, acidesAmines } from './data.js';
+import { entrepreneurs, books, acidesAmines, messages } from './data.js';
 // ---------------------------------------------------------------------------
 
 // function hello() {
@@ -37,20 +37,20 @@ import { entrepreneurs, books, acidesAmines } from './data.js';
 // ####
 // #####
 
-function pyramideMario() {
-  let nbStorey = prompt("Salut, bienvenue dans ma super pyramide ! Combien d'étages veux-tu ? (entre 1 et 20)");
-  nbStorey = Number(nbStorey);
-  if (isNaN(nbStorey) || nbStorey < 1 || nbStorey > 20) {
-    return nbStorey;
-  } else {
-    for (let i = 1; i <= nbStorey; i++) {
-      console.log(" ".repeat(nbStorey - i) + "#".repeat(i));
-    }
-    return ""; // pour éviter d'afficher undefined
-  }
+// function pyramideMario() {
+//   let nbStorey = prompt("Salut, bienvenue dans ma super pyramide ! Combien d'étages veux-tu ? (entre 1 et 20)");
+//   nbStorey = Number(nbStorey);
+//   if (isNaN(nbStorey) || nbStorey < 1 || nbStorey > 20) {
+//     return nbStorey;
+//   } else {
+//     for (let i = 1; i <= nbStorey; i++) {
+//       console.log(" ".repeat(nbStorey - i) + "#".repeat(i));
+//     }
+//     return ""; // pour éviter d'afficher undefined
+//   }
 
-}
-console.log("script4-pyramide: \n", pyramideMario());
+// }
+// console.log("script4-pyramide: \n", pyramideMario());
 
 // -------------------------------------------------------------------------
 
@@ -222,10 +222,23 @@ console.log("script4-pyramide: \n", pyramideMario());
 // console.log("script7-compareCodonWithAcideAline: ", compareCodonWithAcidesAmines(codonAcidesAmines("CCUCGCCGGUACUUCUCG"), acidesAmines));
 // -------------------------------------------------------------------------
 
+function chatBot() {
+  let userMessage = prompt("Comment puis je t'aider?")
+  const listMessages = messages;
+  let isMatch = false;
+  for (const message of listMessages) {
+    if (message.regex.test(userMessage)) {
+      isMatch = true;
+      return message.message;
+    }
+  }
+  if (!isMatch) {
+    return "Désolé, je n'ai pas compris votre demande.";
+  }
+}
 
 
-
-
+console.log(chatBot());
 
 // -------------------------------------------------------------------------
 
@@ -234,3 +247,48 @@ console.log("script4-pyramide: \n", pyramideMario());
 
 
 // -------------------------------------------------------------------------
+
+// const regex = /\?/;
+
+// // Alternative syntax using RegExp constructor
+// // const regex = new RegExp('\\?', '')
+
+// const str = `test?`;
+
+// // Reset `lastIndex` if this regex is defined globally
+// // regex.lastIndex = 0;
+
+// let m;
+
+// if ((m = regex.exec(str)) !== null) {
+//   // The result can be accessed through the `m`-variable.
+//   m.forEach((match, groupIndex) => {
+//     console.log(`Found match, group ${groupIndex}: ${match}`);
+//   });
+// }
+
+
+
+// const regex = /^[A-Z\s\W\d]+$/g;
+
+// // Alternative syntax using RegExp constructor
+// // const regex = new RegExp('^[A-Z\\s\\W\\d]+$', 'g')
+
+// const str = `TEST EEEEEE`;
+
+// // Reset `lastIndex` if this regex is defined globally
+// // regex.lastIndex = 0;
+
+// let m;
+
+// while ((m = regex.exec(str)) !== null) {
+//   // This is necessary to avoid infinite loops with zero-width matches
+//   if (m.index === regex.lastIndex) {
+//     regex.lastIndex++;
+//   }
+
+//   // The result can be accessed through the `m`-variable.
+//   m.forEach((match, groupIndex) => {
+//     console.log(`Found match, group ${groupIndex}: ${match}`);
+//   });
+// }
