@@ -37,20 +37,20 @@ import { entrepreneurs, books, acidesAmines } from './data.js';
 // ####
 // #####
 
-// function pyramideMario() {
-//   let nbStorey = prompt("Salut, bienvenue dans ma super pyramide ! Combien d'étages veux-tu ? (entre 1 et 20)");
-//   nbStorey = Number(nbStorey);
-//   if (isNaN(nbStorey) || nbStorey < 1 || nbStorey > 20) {
-//     return nbStorey;
-//   } else {
-//     for (let i = 1; i <= nbStorey; i++) {
-//       console.log("#".repeat(i));
-//     }
-//     return ""; // pour éviter d'afficher undefined
-//   }
+function pyramideMario() {
+  let nbStorey = prompt("Salut, bienvenue dans ma super pyramide ! Combien d'étages veux-tu ? (entre 1 et 20)");
+  nbStorey = Number(nbStorey);
+  if (isNaN(nbStorey) || nbStorey < 1 || nbStorey > 20) {
+    return nbStorey;
+  } else {
+    for (let i = 1; i <= nbStorey; i++) {
+      console.log(" ".repeat(nbStorey - i) + "#".repeat(i));
+    }
+    return ""; // pour éviter d'afficher undefined
+  }
 
-// }
-// console.log("script4-pyramide: \n", pyramideMario());
+}
+console.log("script4-pyramide: \n", pyramideMario());
 
 // -------------------------------------------------------------------------
 
@@ -61,13 +61,14 @@ import { entrepreneurs, books, acidesAmines } from './data.js';
 // }
 
 // console.log("script5-bornIn70s: ", bornIn70s());
+// -------------------------------------------------------------------------
 
 // function nomPrenom() {
 //   return entrepreneurs.map(entrepreneur => `${entrepreneur.first} ${entrepreneur.last}`);
 // }
 
 // console.log("script5-nomPrenom: ", nomPrenom());
-
+// -------------------------------------------------------------------------
 // function ageToday() {
 //   // const currentYear = 2025;
 //   const currentYear = new Date().getFullYear(); // new Date() est la date complete(jour, mois, année, heure) en cours , getFullYear() retourne juste l'année actuelle
@@ -78,7 +79,7 @@ import { entrepreneurs, books, acidesAmines } from './data.js';
 // }
 
 // console.log("script5-ageToday: ", ageToday());
-
+// -------------------------------------------------------------------------
 // function sortNames() {
 //   let lastNames = [];
 //   entrepreneurs.forEach(entrepreneur => {
@@ -102,7 +103,7 @@ import { entrepreneurs, books, acidesAmines } from './data.js';
 // }
 
 // console.log("script6-borrowedOnce: ", borrowedOnce());
-
+// -------------------------------------------------------------------------
 // function sortedBooksByRented() {
 //   const sorted = books.sort((a, b) => b.rented - a.rented);
 //   return sorted;
@@ -142,7 +143,7 @@ import { entrepreneurs, books, acidesAmines } from './data.js';
 // }
 
 // console.log("script6-borrowedBooks: ", borrowedBooks());
-
+// -------------------------------------------------------------------------
 
 // function findBookById(id) {
 //   const book = books.find(book => book.id === id);
@@ -154,7 +155,7 @@ import { entrepreneurs, books, acidesAmines } from './data.js';
 
 // console.log("script6-findBookById: ", findBookById(873495));
 // console.log("script6-findBookById: ", findBookById(0));
-
+// -------------------------------------------------------------------------
 // function removeBookById(id) {
 //   const index = books.findIndex(book => book.id === id);
 //   if (index !== -1) {
@@ -165,7 +166,7 @@ import { entrepreneurs, books, acidesAmines } from './data.js';
 // }
 
 // console.log("script6-RemoveBookById: ", removeBookById(133712));
-
+// -------------------------------------------------------------------------
 // function removeBookById(id) {
 //   const bkToRemove = books.findIndex(book => book.id === id);
 //   // console.log("script6-RemoveBookById: ", bkToRemove);
@@ -174,7 +175,7 @@ import { entrepreneurs, books, acidesAmines } from './data.js';
 //     return books;
 //   }
 // }
-// console.log("script6-RemoveBookById: ", removeBookById(133712));
+
 // function sortBooks() {
 //   let books = removeBookById(133712);
 //   // console.log("script6-sortBooks: ", books);
