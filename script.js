@@ -1,4 +1,4 @@
-import { entrepreneurs, books } from './data.js';
+import { entrepreneurs, books, acidesAmines } from './data.js';
 // ---------------------------------------------------------------------------
 
 // function hello() {
@@ -41,7 +41,7 @@ import { entrepreneurs, books } from './data.js';
 //   let nbStorey = prompt("Salut, bienvenue dans ma super pyramide ! Combien d'étages veux-tu ? (entre 1 et 20)");
 //   nbStorey = Number(nbStorey);
 //   if (isNaN(nbStorey) || nbStorey < 1 || nbStorey > 20) {
-//     return "Nombre invalide, veuillez entrer un nombre entre 1 et 20.";
+//     return nbStorey;
 //   } else {
 //     for (let i = 1; i <= nbStorey; i++) {
 //       console.log("#".repeat(i));
@@ -166,37 +166,59 @@ import { entrepreneurs, books } from './data.js';
 
 // console.log("script6-RemoveBookById: ", removeBookById(133712));
 
-function removeBookById(id) {
-  const bkToRemove = books.findIndex(book => book.id === id);
-  // console.log("script6-RemoveBookById: ", bkToRemove);
-  if (bkToRemove !== -1) {
-    books.splice(bkToRemove, 1);
-    return books;
-  }
-}
+// function removeBookById(id) {
+//   const bkToRemove = books.findIndex(book => book.id === id);
+//   // console.log("script6-RemoveBookById: ", bkToRemove);
+//   if (bkToRemove !== -1) {
+//     books.splice(bkToRemove, 1);
+//     return books;
+//   }
+// }
 // console.log("script6-RemoveBookById: ", removeBookById(133712));
-function sortBooks() {
-  let books = removeBookById(133712);
-  // console.log("script6-sortBooks: ", books);
-  let sortedBooks = books.sort(function (a, b) {
-    if (a.title < b.title) {
-      return -1;
-    }
-    if (a.title > b.title) {
-      return 1;
-    }
-    return 0;
-  });
-  return sortedBooks;
-}
-console.log("script6-sortBooks: ", sortBooks());
+// function sortBooks() {
+//   let books = removeBookById(133712);
+//   // console.log("script6-sortBooks: ", books);
+//   let sortedBooks = books.sort(function (a, b) {
+//     if (a.title < b.title) {
+//       return -1;
+//     }
+//     if (a.title > b.title) {
+//       return 1;
+//     }
+//     return 0;
+//   });
+//   return sortedBooks;
+// }
+// console.log("script6-sortBooks: ", sortBooks());
 // -------------------------------------------------------------------------
 
+// function codonAcidesAmines(string) {
+//   let resultARN = [];
+//   for (let i = 0; i < string.length; i += 3) {
+//     const codon = string.slice(i, i + 3);
+//     resultARN.push(codon);
+
+//   }
+//   return resultARN;
+// }
 
 
+// function compareCodonWithAcidesAmines(array, objet) {
+//   let result = [];
+//   // loop pour parcourir chaque clés de l'objet acidesAmines (ex clé= serine, proline, etc)
+//   for (const acAm in objet[0]) {
+//     // récupère les valeurs de chaque clé (ex: ["UCU", "UCC", "UCA", "UCG", "AGU", "AGC"] pour serine)
+//     const group = objet[0][acAm];
+//     // array.some() permet de vérifier si au moins un élément du tableau correspond à un élément du groupe
+//     // 
+//     const isAMatch = array.some(name => group.includes(name));
+//     isAMatch ? result.push(acAm) : null;
+//   }
+//   return result.join("-");
+// }
 
-
-
+// console.log("script7-compareCodonWithAcidesAmines: ", compareCodonWithAcidesAmines(codonAcidesAmines("CCGUCGUUGCGCUACAGC"), acidesAmines));
+// console.log("script7-compareCodonWithAcideAline: ", compareCodonWithAcidesAmines(codonAcidesAmines("CCUCGCCGGUACUUCUCG"), acidesAmines));
 // -------------------------------------------------------------------------
 
 

@@ -33,3 +33,14 @@ export const books = [
   { title: 'Voyage au centre de la Terre', id: 4656388, rented: 38 },
   { title: 'Guerre et Paix', id: 748147, rented: 19 }
 ];
+
+export const acidesAmines = [
+  {
+    serine: ["UCU", "UCC", "UCA", "UCG", "AGU", "AGC"],
+    proline: ["CCU", "CCC", "CCA", "CCG"],
+    leucine: ["UUA", "UUG"],
+    phenylalanine: ["UUU", "UUC"],
+    arginine: ["CGU", "CGC", "CGA", "CGG", "AGA", "AGG"],
+    tyrosine: ["UAU", "UAC"]
+  }
+];
