@@ -1,4 +1,4 @@
-import { entrepreneurs } from './data.js';
+import { entrepreneurs, books } from './data.js';
 // ---------------------------------------------------------------------------
 
 // function hello() {
@@ -88,5 +88,126 @@ import { entrepreneurs } from './data.js';
 // }
 
 // console.log("script5-sortNames: ", sortNames());
+
+// -------------------------------------------------------------------------
+
+// function borrowedOnce() {
+//   return books.map(book => {
+//     if (book.rented >= 1) {
+//       return `Le livre "${book.title}" a été emprunté ${book.rented} fois.`;
+//     } else {
+//       return `Le livre "${book.title}" n'a jamais été emprunté.`;
+//     }
+//   });
+// }
+
+// console.log("script6-borrowedOnce: ", borrowedOnce());
+
+// function sortedBooksByRented() {
+//   const sorted = books.sort((a, b) => b.rented - a.rented);
+//   return sorted;
+// }
+
+// function maxRentedBook() {
+//   const sorted = sortedBooksByRented();
+//   const maxRented = sorted[0].rented;
+//   return maxRented;
+// }
+
+// function minRentedBook() {
+//   const sorted = sortedBooksByRented();
+//   const minRented = sorted[sorted.length - 1].rented;
+//   return minRented;
+// }
+
+
+
+// function borrowedBooks() {
+//   const maxRented = maxRentedBook();
+//   const minRented = minRentedBook();
+//   const mostBorrowedBooks = books.filter(book => book.rented === maxRented);
+//   const leastBorrowedBooks = books.filter(book => book.rented === minRented);
+
+//   let result = {
+//     messageMostBorrowed: `Le livre le plus emprunté est "${mostBorrowedBooks[0].title}" avec ${maxRented} emprunts.`
+//   };
+
+//   if (minRented !== 0) {
+//     result.messageLeastBorrowed = `Le livre le moins emprunté est "${leastBorrowedBooks[0].title}" avec ${minRented} emprunts.`;
+//   } else {
+//     result.messageLeastBorrowed = `Le livre "${leastBorrowedBooks[0].title}" n'a jamais été emprunté.`;
+//   }
+
+//   return result;
+// }
+
+// console.log("script6-borrowedBooks: ", borrowedBooks());
+
+
+// function findBookById(id) {
+//   const book = books.find(book => book.id === id);
+//   if (book) {
+//     return `Le livre avec l'ID: ${id} est "${book.title}".`;
+//   }
+//   return `Aucun livre trouvé avec l'ID: ${id}.`;
+// }
+
+// console.log("script6-findBookById: ", findBookById(873495));
+// console.log("script6-findBookById: ", findBookById(0));
+
+// function removeBookById(id) {
+//   const index = books.findIndex(book => book.id === id);
+//   if (index !== -1) {
+//     const removedBook = books.splice(index, 1);
+//     return `Le livre "${removedBook[0].title}" a été supprimé avec succès.`;
+//   }
+//   return `Aucun livre trouvé avec l'ID: ${id}.`;
+// }
+
+// console.log("script6-RemoveBookById: ", removeBookById(133712));
+
+function removeBookById(id) {
+  const bkToRemove = books.findIndex(book => book.id === id);
+  // console.log("script6-RemoveBookById: ", bkToRemove);
+  if (bkToRemove !== -1) {
+    books.splice(bkToRemove, 1);
+    return books;
+  }
+}
+// console.log("script6-RemoveBookById: ", removeBookById(133712));
+function sortBooks() {
+  let books = removeBookById(133712);
+  // console.log("script6-sortBooks: ", books);
+  let sortedBooks = books.sort(function (a, b) {
+    if (a.title < b.title) {
+      return -1;
+    }
+    if (a.title > b.title) {
+      return 1;
+    }
+    return 0;
+  });
+  return sortedBooks;
+}
+console.log("script6-sortBooks: ", sortBooks());
+// -------------------------------------------------------------------------
+
+
+
+
+
+
+// -------------------------------------------------------------------------
+
+
+
+
+
+
+// -------------------------------------------------------------------------
+
+
+
+
 
 // -------------------------------------------------------------------------
